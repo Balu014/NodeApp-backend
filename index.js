@@ -12,11 +12,11 @@ app.use(express.json());
 app.use((express.urlencoded({extended:false})))
 
 // Intialize routes
-app.use('/api/products', productRoutes)
+app.use('/', productRoutes)
 
 mongoose
   .connect(
-    "mongodb+srv://balajibalu63204:<password>@backenddatabase.sxtur.mongodb.net/NODE-API?retryWrites=true&w=majority&appName=BackendDatabase"
+    "mongodb+srv://balajibalu63204:fNwJPHZTVNZKrfBQ@backenddatabase.sxtur.mongodb.net/NODE-API?retryWrites=true&w=majority&appName=BackendDatabase"
   )
   .then(() => {
     console.log("Database was Connected");

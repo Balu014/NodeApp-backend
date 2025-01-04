@@ -8,14 +8,18 @@ const {
   deleteProduct,
 } = require("../controllers/product.controller.js");
 
-router.get("/", getProducts);
+const { signup } = require("../controllers/auth.controller.js")
 
-router.get("/:id", getProduct);
+router.post('/signup', signup)
 
-router.post("/", createProduct);
+router.get("/api/products", getProducts);
 
-router.put("/:id", updateProduct);
+router.get("/api/products:id", getProduct);
 
-router.delete("/:id", deleteProduct);
+router.post("/api/products", createProduct);
+
+router.put("/api/products:id", updateProduct);
+
+router.delete("/api/products:id", deleteProduct);
 
 module.exports = router;
